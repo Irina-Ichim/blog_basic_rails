@@ -1,0 +1,5 @@
+<h1>Accesing Instance Variables in Views</h1>
+
+<div>
+<%= @message.html_safe %>
+</div>

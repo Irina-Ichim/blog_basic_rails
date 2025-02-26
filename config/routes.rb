@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get "custom/index"
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -14,4 +15,8 @@ Rails.application.routes.draw do
     get "home/index" => "home#index"
   get "home/getquerystringvalues" => "home#getquerystringvalues"
   get "home/passdatatoviews" => "home#passdatatoviews"
+  get "home/showdatatimeinfo" => "home#showdatatimeinfo"
+  get "home/conditionalrendering" => "home#conditionalrendering"
+  get "custom" => "custom#index"
+
 end

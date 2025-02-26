@@ -1,0 +1,67 @@
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Is Visible</td>
+        <td>Is Logged In?</td>
+        <td>Country Code</td>
+        <td>Work Experience</td>
+        <td>State Code</td>
+    </tr>
+    <tr>
+        <td> <%= @data[:name] %></td>
+        <td><%= @data[:isVisible] %></td>
+        <td><%= @data[:loggedIn] %></td>
+        <td><%= @data[:countryCode] %></td>
+        <td><%= @data[:workExperience] %></td>
+        <td><%= @data[:stateCode] %></td>
+    </tr>
+</table>
+
+<% if @data[:loggedIn] %>
+<h1>Hi <%= @data[:name] %>, You are logged in currently!</h1>
+<% else %>
+<h1>Hi <%= @data[:name] %>! You are just a guest! Please login!!</h1>
+<% end %>
+
+
+<% if @data[:loggedIn] === true %>
+<h1>Hi <%= @data[:name] %>, You are logged in currently!</h1>
+<% else %>
+<h1>Hi <%= @data[:name] %>! You are just a guest! Please login!!</h1>
+<% end %>
+
+<% if @data[:name] === 'Irina' %>
+<h1>Hi <%= @data[:name] %>, You are an Elite Player</h1>
+<% else %>
+<h1>Hi <%= @data[:name] %>! You are not a Elite Player!!</h1>
+<% end %>
+
+<% if @data[:name] != 'Irina' %>
+<h1>Hi <%= @data[:name] %>, You are an Elite Player</h1>
+<% else %>
+<h1>Hi <%= @data[:name] %>! You are not a Elite Player!!</h1>
+<% end %>
+
+<% if @data[:countryCode] == 'US' %>
+<h1> Currency Code is USD</h1>
+<% elsif @data[:countryCode] == 'UK' %>
+<h1> Currency Code is GBP</h1>
+<% elsif @data[:countryCode] == 'RO' %>
+<h1> Currency Code is LEI</h1>
+<% elsif @data[:countryCode] == 'ES' %>
+<h1> Currency Code is EURO</h1>
+<% else %>
+<h1> Currency Code is not available</h1>
+<% end %>
+
+<% if @data[workExperience] > 5 and @data[workExperience] <50 %>
+<h1> You are a Senior Developer</h1>
+<% elsif @data[workExperience] > 1 and @data[workExperience] <5 %>
+<h1> You are a Junior Developer</h1>
+<% end %>
+
+<% if @data[:countryCode] == 'US' or @data[:countryCode] == 'UK' %>
+<h1> You are from a Developed Country</h1>
+<% else %>
+<h1> You are from a Developing Country</h1>
+<% end %>

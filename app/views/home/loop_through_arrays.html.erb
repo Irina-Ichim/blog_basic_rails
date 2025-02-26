@@ -1,0 +1,70 @@
+<h1>Lista de Productos 🛒</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+      <th>Stock</th>
+      <th>Descontinuado</th>
+      <th>Costo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td><%= product[:id] %></td>
+        <td><%= product[:name] %></td>
+        <td><%= product[:quantity] %></td>
+        <td><%= product[:stock] %></td>
+        <td><%= product[:discontinued] ? "Sí" : "No" %></td>
+        <td>$<%= product[:cost] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<h2>Lista de productos:</h2>
+<ul>
+  <% @products.each do |product| %>
+    <li><%= product[:name] %></li>
+  <% end %>
+</ul>
+
+<h2>Lista ordenada de productos:</h2>
+<ol>
+  <% @products.each do |product| %>
+    <li><%= product[:name] %></li>
+  <% end %>
+</ol>
+
+<h2>Selecciona un producto:</h2>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <input type="checkbox" value="<%= product[:name] %>"> <%= product[:name] %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Elige un producto:</h2>
+<ul>
+  <% @products.each do |product| %>
+    <li>
+      <input type="radio" name="product" value="<%= product[:name] %>"> <%= product[:name] %>
+    </li>
+  <% end %>
+</ul>
+
+<h2>Selecciona un producto:</h2>
+<select>
+  <% @products.each do |product| %>
+    <option value="<%= product[:name] %>"><%= product[:name] %></option>
+  <% end %>
+</select>
+
+<h2>Productos en cajas de texto:</h2>
+<% @products.each do |product| %>
+  <input type="text" value="<%= product[:name] %>"><br>
+<% end %>

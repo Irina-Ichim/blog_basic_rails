@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   get "home/showdatatimeinfo" => "home#showdatatimeinfo"
   get "home/conditionalrendering" => "home#conditionalrendering"
   get "custom" => "custom#index"
+  get "home/loop_through_arrays", to: "home#loop_through_arrays"
 
 end
